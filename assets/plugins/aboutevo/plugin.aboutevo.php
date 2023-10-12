@@ -15,7 +15,9 @@ if(!empty($links)) {
 if(empty($body)) return;
 
 $params = $modx->event->params;
-$col_lg = (int)$params["col_lg"];
+$col_lg = isset($params["col_lg"]) ? (int)$params["col_lg"] : 6;
+$menu_index = isset($params["col_lg"]) ? (int)$params["menu_index"] : 10;
+$hide_menu = isset($params["hide_menu"]) ? (int)$params["menu_index"] : 0;
 
 $body .= "<style>
 .widgets #about .wm_buttons {
@@ -88,7 +90,7 @@ $body .= "<style>
 }</style>";
 $body = '<div class="wm_buttons card-body">' . $body . '</div>';
 $widgets['about'] = [
-    'menuindex' => '11',
+    'menuindex' => $menu_index,
     'id'        => 'about',
     'cols'      => 'col-lg-' . $col_lg,
     'icon'      => 'fa-info-circle',
