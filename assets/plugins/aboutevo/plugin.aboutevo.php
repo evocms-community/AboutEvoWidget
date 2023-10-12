@@ -13,6 +13,10 @@ if(!empty($links)) {
     }
 }
 if(empty($body)) return;
+
+$params = $modx->event->params;
+$col_lg = (int)$params["col_lg"];
+
 $body .= "<style>
 .widgets #about .wm_buttons {
     display: -ms-flexbox;
@@ -25,6 +29,7 @@ $body .= "<style>
 
 .widgets #about .wm_button {
     max-width: 50%;
+    min-width: 120px;
     flex: 0 0 50%
 }
 
@@ -85,7 +90,7 @@ $body = '<div class="wm_buttons card-body">' . $body . '</div>';
 $widgets['about'] = [
     'menuindex' => '11',
     'id'        => 'about',
-    'cols'      => 'col-lg-6',
+    'cols'      => 'col-lg-' . $col_lg,
     'icon'      => 'fa-info-circle',
     'title'     => '[%about_title%]',
     'body'      => $body,
