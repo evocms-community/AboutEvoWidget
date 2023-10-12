@@ -96,7 +96,7 @@ $widgets['about'] = [
     'icon'      => 'fa-info-circle',
     'title'     => '[%about_title%]',
     'body'      => $body,
-    'hide'      => 0
+    'hide'      => $hide_menu
 ];
 
 $modx->event->addOutput(serialize($widgets));
