@@ -17,7 +17,7 @@ if(empty($body)) return;
 $params = $modx->event->params;
 $col_lg = isset($params["col_lg"]) ? (int)$params["col_lg"] : 6;
 $menu_index = isset($params["col_lg"]) ? (int)$params["menu_index"] : 10;
-$hide_menu = isset($params["hide_menu"]) ? (int)$params["menu_index"] : 0;
+$hide_menu = isset($params["hide_menu"]) ? (int)$params["hide_menu"] : 0;
 
 $body .= "<style>
 .widgets #about .wm_buttons {
